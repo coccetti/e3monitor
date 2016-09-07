@@ -22,20 +22,20 @@ lastTransferredFile = "/home/noferini/test/nfilePerDay"
 elogCsvFile = "/var/www/html/monitor/EEE_data.csv"
 
 # Web pages to write
-mainWebPageFile = "/var/www/html/monitor/index.html"
-ibWebPageFile = "/var/www/html/monitor/ib.html"
+mainWebPageFile = "/var/www/html/monitor/42.html"
+ibWebPageFile = "/var/www/html/monitor/ib2.html"
 
 # xslx File to write
 xlsxFile = "/var/www/html/monitor/shifter_report.xlsx"
 
 # Config File for email report
-emailConfigFile = "/opt/eee/e3monitor/config/email.ini"
+emailConfigFile = "/opt/eee/dev/e3monitor/config/email.ini"
 
 # Config File for logging module
-logConfigFile = "/opt/eee/e3monitor/config/logConf.ini"
+logConfigFile = "/opt/eee/dev/e3monitor/config/logConf.ini"
 
 # Config File for database
-dbConfigFile = "/opt/eee/e3monitor/config/database.ini"
+dbConfigFile = "/opt/eee/dev/e3monitor/config/database.ini"
 
 # Name of the Data pickle File storing Transfer entries from DB
 pklTransferFile = "transfer_db_data.pkl"
@@ -59,11 +59,11 @@ pklReportFile = "report_data.pkl"
 htmlReportFile = "report_message.html"
 
 # Path of the Working directory
-pathWorkDir = '/opt/eee/e3monitor_work'
+pathWorkDir = '/opt/eee/dev/e3monitor_work'
 
 # Path of Dqm and Dqmreport
-pathDqm = "/var/www/html/monitor/dqm"
-pathDqmreport = "/var/www/html/monitor/dqmreport"
+pathDqm = "/var/www/html/monitor/dqm2"
+pathDqmreport = "/var/www/html/monitor/dqmreport2"
 
 # Path of the directory where we save transferred files plots
 pathSaveFig = '/var/www/html/monitor/plots/'

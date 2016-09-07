@@ -19,9 +19,12 @@ def read_dqmreport(schoolNamesList, pathDqmreport):
         except:
             lastDqmreport[dirSchoolName] = ''
         # Get the directory of last day of DqmReports
-        if len(dirDates) < 1:
+        try:
+            if len(dirDates) < 1:
+                lastDqmreport[dirSchoolName] = ''
+            else:
+                lastDqmreport[dirSchoolName] = sorted(dirDates)[-1]
+                schoolsDqmreportList.append(dirSchoolName)
+        except:
             lastDqmreport[dirSchoolName] = ''
-        else:
-            lastDqmreport[dirSchoolName] = sorted(dirDates)[-1]
-            schoolsDqmreportList.append(dirSchoolName)
     return lastDqmreport, schoolsDqmreportList

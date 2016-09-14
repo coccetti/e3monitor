@@ -76,7 +76,7 @@ Download the Excel Sheet for the Shifter's Report
 PAGE_SUBTILE_HTML = '<h2>[EEE Monitor info] <i>RUN 2 - Data taking - Day number '
 
 TABELLA1_P2_HTML = """
-<p style="font-size:80%;">Questa tabella mostra la situazione dei telescopi in acquisizione.</p>
+<p style="font-size:80%;">Tabella per i dati ricostruiti con l'Analyzer 2</p>
 
 <table>
 <tr><th>Scuola</th>
@@ -128,13 +128,6 @@ cui il link con il CNAF non funziona da pi&ugrave; di 3 ore.</p>
 """
 
 FOOTER_HTML = """
-<h3 style="margin-top:24px;">Today's plot of the total number of candidate tracks vs
-months of data acquisition</h3>
-<p style="text-align:center;">
-<a href="plots/tracks.png">
-<img src="plots/tracks.png" alt="Tracks" width="800">
-</a>
-</p>
 <p>&nbsp;</p>
 <div id="footer">
 <p>Webpage made by&nbsp;

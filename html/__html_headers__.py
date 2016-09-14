@@ -83,8 +83,6 @@ TABELLA1_P2_HTML = """
 <th>Giorno</th>
 <th>Ora</th>
 <th class="small">Nome dell'ultimo<br />File trasferito</th>
-<th class="small">Numero Files<br />trasferiti oggi</th>
-<th class="small">Ultima Entry<br />nell'e-logbook<br />delle Scuole<br />del Run2</th>
 <th class="small">Nome dell'ultimo<br />File analizzato<br />dal DQM</th>
 <th>Report<br />giornaliero<br />DQM</th>
 <th class="small">RATE of<br />Triggers</br />

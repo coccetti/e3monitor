@@ -75,8 +75,8 @@ def make_webpage_index(monitorData,
 
         # Set <tr> class color
         if transferDelay == -1:
-            rowColor = 'red'
-            transfer_time_txt = 'red'
+            rowColor = 'gray'
+            transfer_time_txt = 'gray'
         elif transferDelay.days == 0:
             if transferDelay.seconds < TRANSFER_SEC_LIMIT:
                 transfer_time_txt = 'green'
@@ -84,14 +84,14 @@ def make_webpage_index(monitorData,
                     _tracks = round(monitorData.get_trackRate(schoolName))
                     if (_tracks < TRACKS_ERROR_LOW or
                             _tracks > TRACKS_ERROR_HIGH):
-                        rowColor = 'red'
+                        rowColor = 'gray'
                     elif (_tracks < TRACKS_WARNING_LOW or
                             _tracks > TRACKS_WARNING_HIGH):
                         rowColor = 'yellow'
                     else:
                         rowColor = 'green'
                 except:
-                    rowColor = 'red'
+                    rowColor = 'gray'
                     continue
             else:
                 transfer_time_txt = 'yellow'
@@ -99,11 +99,11 @@ def make_webpage_index(monitorData,
                     _tracks = round(monitorData.get_trackRate(schoolName))
                     if (_tracks < TRACKS_ERROR_LOW or
                             _tracks > TRACKS_ERROR_HIGH):
-                        rowColor = 'red'
+                        rowColor = 'gray'
                     else:
                         rowColor = 'yellow'
                 except:
-                    rowColor = 'red'
+                    rowColor = 'gray'
                     continue
         elif transferDelay.days == 1:
             transfer_time_txt = 'yellow'
@@ -111,15 +111,15 @@ def make_webpage_index(monitorData,
                 _tracks = round(monitorData.get_trackRate(schoolName))
                 if (_tracks < TRACKS_ERROR_LOW or
                         _tracks > TRACKS_ERROR_HIGH):
-                    rowColor = 'red'
+                    rowColor = 'gray'
                 else:
                     rowColor = 'yellow'
             except:
                 rowColor = 'yellow'
                 continue
         else:
-            rowColor = 'red'
-            transfer_time_txt = 'red'
+            rowColor = 'gray'
+            transfer_time_txt = 'gray'
         # Print only green telescopes :-)
         # if rowColor != 'green':
         #    continue
@@ -166,36 +166,6 @@ def make_webpage_index(monitorData,
         except:
             w.write('')
         w.write('</span>')
-        w.write('</td>')
-
-        # Print 'numero di files trasferiti oggi'
-        w.write('<td>')
-        try:
-            w.write(str(monitorData.get_transferFileNum(schoolName)))
-        except:
-            w.write('*')
-        w.write('<br /><a href=\"plots/' + schoolName + '.png\">[History]</a>')
-        w.write('</td>')
-
-        # Print "Ultima Entry nell'e-logbook delle Scuole"
-        w.write('<td>')
-        try:
-            elogDelay = now - monitorData.get_elogEntryTs(schoolName)
-            if elogDelay.days <= ELOG_WARNING:
-                elog_time_txt = 'gray'
-            elif elogDelay.days <= ELOG_ERROR:
-                elog_time_txt = 'yellow'
-            else:
-                elog_time_txt = 'red'
-            w.write('<span class=\"' + elog_time_txt + '\">')
-            w.write(monitorData.get_elogEntryTs(
-                schoolName).strftime("%H:%M"))
-            w.write('<br />')
-            w.write(monitorData.get_elogEntryTs(
-                schoolName).strftime("%d/%m/%Y"))
-            w.write('</span>')
-        except:
-            w.write('*')
         w.write('</td>')
 
         # Print "Nome dell'ultimo File analizzato dal DQM"
